@@ -133,3 +133,6 @@ dmypy.json
 
 # VsCode
 .vscode
+
+# Heroku
+staticfiles
