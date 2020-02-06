@@ -17,8 +17,8 @@ $ pip install -r requirements.txt
 
 $ createdb kitchen
 
-$ python manage.py migrate
-$ python manage.py collectstatic
+$ python3 manage.py migrate
+$ python3 manage.py collectstatic
 
 $ heroku local
 ```

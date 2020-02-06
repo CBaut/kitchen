@@ -8,6 +8,8 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  {% load static %}
+  <link rel="stylesheet" href="{% static "app_kitchen/css/style.css" %}">
 
 </head>
 
@@ -19,7 +21,8 @@
 
   <div class="card-deck">
     <div class="card">
-      <img src="/staticfiles/admin/img/product_images/peanuts.jpg" class="card-img-top" alt="coffee_bag">
+      {% load static %}
+      <img src="{% static "app_kitchen/peanuts.jpg" %}" class="card-img-top snack_card" alt="coffee_bag">
       <div class="card-body">
         <h5 class="card-title">Peanuts</h5>
         <p class="card-text">12oz Bucket of Planter's Peanuts</p>
@@ -39,10 +42,99 @@
                   </div>
                   <div class="modal-body">
                     <div class="card">
-                      <img src="/staticfiles/admin/img/product_images/peanuts.jpg" class="card-img-top"
+                      <img src="{% static "app_kitchen/peanuts.jpg" %}" class="card-img-top snack_card"
                         alt="coffee_bag">
                       <div class="card-body">
                         <h5 class="card-title">Peanuts</h5>
+                        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
+                        <p class="card-text">
+                          <h5 class="text-muted">$15</h5>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-dark">Request</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </small>
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      {% load static %}
+      <img src="{% static "app_kitchen/nature_valley.jpg" %}" class="card-img-top snack_card" alt="coffee_bag">
+      <div class="card-body">
+        <h5 class="card-title">Nature Valley Bars</h5>
+        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
+        <p class="card-text">
+          <small class="text-muted">
+            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#firstModal">Quick View
+            </button>
+            <div class="modal fade" id="firstModal" tabindex="-1" role="dialog" aria-labelledby="firstModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="firstModalLabel">Nature Valley Bars</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card">
+                      {% load static %}
+                      <img src="{% static "app_kitchen/nature_valley.jpg" %}" class="card-img-top snack_card"
+                        alt="coffee_bag">
+                      <div class="card-body">
+                        <h5 class="card-title">Peanuts</h5>
+                        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
+                        <p class="card-text">
+                          <h5 class="text-muted">$15</h5>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-dark">Request</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </small>
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      {% load static %}
+      <img src="{% static "app_kitchen/peanuts.jpg" %}" class="card-img-top snack_card" alt="coffee_bag">
+      <div class="card-body">
+        <h5 class="card-title">Peanuts</h5>
+        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
+        <p class="card-text">
+          <small class="text-muted">
+            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#firstModal">Quick View
+            </button>
+            <div class="modal fade" id="firstModal" tabindex="-1" role="dialog" aria-labelledby="firstModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="firstModalLabel">Peanuts</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card">
+                      <img src="{% static "app_kitchen/peanuts.jpg" %}" class="card-img-top snack_card"
+                        alt="coffee_bag">
+                      <div class="card-body">
+                        <h5 class="card-title">Nature Valley Bars</h5>
                         <p class="card-text">12oz Bucket of Planter's Peanuts</p>
                         <p class="card-text">
                           <h5 class="text-muted">$15</h5>

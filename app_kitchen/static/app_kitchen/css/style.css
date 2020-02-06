@@ -1,0 +1,8 @@
+.snack_card {
+  width: 50%;
+display: inline-block;
+}
+
+.card p {
+  text-align: center;
+}
