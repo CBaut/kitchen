@@ -9,17 +9,31 @@ This application supports the [Getting Started with Python on Heroku](https://de
 Make sure you have Python 3.7 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
 ```sh
+
+For the first time to run:
 $ git clone https://github.com/CBaut/kitchen.git
 $ cd kitchen
 
 $ python3 -m venv venv
-$ pip install -r requirements.txt
+
+Activate the virtual environment:
+For Windows:
+$ call venv/Scripts/activate
+
+For Mac:
+$ source venv/Scripts/activate
+
+$ pip3 install -r requirements.txt
+$ python3 -m pip install django
 
 $ createdb kitchen
 
 $ python3 manage.py migrate
-$ python3 manage.py collectstatic
 
+For Windows:
+$ heroku local web -f Procfile.windows
+
+For Mac:
 $ heroku local
 ```
 
