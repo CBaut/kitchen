@@ -35,20 +35,20 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
 
-class ItemsToOrder(models.Model):
-    items = models.CharField(max_length=60) - one to many
-    created_at = models.DateTimeField(auto_now_add=True)
-    date_completed = models.DateTimeField(auto_now=True)
-
-class Item(models.Model):
+class Item(models.Model): 
     quantity = models.IntegerField()
-    is_requested = models.IntegerField()
+    is_requested = models.BooleanField(default=False)
     image_link = models.TextField()
     is_low_inventory = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = ItemManager()
-    last_updated_by = models.OneToOneField(to=User)
+    last_updated_by = models.OneToOneField(to=User, on_delete='CASCADE')
+
+class ItemsToOrder(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    date_completed = models.DateTimeField(auto_now=True)
+    items =  models.ForeignKey(Item, on_delete='CASCADE', related_name="Items_In_Queue")
 
 class OrderHistory(models.Model):
     quantity_ordered = models.IntegerField()
