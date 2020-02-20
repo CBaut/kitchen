@@ -47,15 +47,16 @@ class Item(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = ItemManager()
-    last_updated_by = models.OneToOneField(to=User, on_delete='CASCADE')
-    votes = models.ManyToManyField("Vote", related_name="item_votes")
+    last_updated_by = models.OneToOneField(to=User, on_delete=models.CASCADE)
+    # TODO awaiting further implementation
+    # votes = models.ManyToManyField("Vote", related_name="item_votes")
 
 
 class ItemsToOrder(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     date_completed = models.DateTimeField(auto_now=True)
     items = models.ForeignKey(
-        Item, on_delete='CASCADE', related_name="Items_In_Queue")
+        Item, on_delete=models.CASCADE, related_name="Items_In_Queue")
 
 
 class OrderHistory(models.Model):

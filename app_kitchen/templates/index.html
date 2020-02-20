@@ -10,11 +10,21 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   {% load static %}
   <link rel="stylesheet" href="{% static "app_kitchen/css/style.css" %}">
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Kitchen App</h1>
+
+  <nav class="navbar">
+    <a href="#"><i class="material-icons positive">kitchen</i></a>
+    <h1 class="title">Kitchen App</h1>
+    <ul class="nav-links">
+      <a href="#"><li class="nav-item">Link 1</li></a>
+      <a href="#"><li class="nav-item">Link 2</li></a>
+      <a href="#"><li class="nav-item">Link 3</li></a>
+    </ul>
+  </nav>
+
   <br>
   <h2>In Stock</h2>
   <br>
@@ -26,6 +36,10 @@
       <div class="card-body">
         <h5 class="card-title">Peanuts</h5>
         <p class="card-text">12oz Bucket of Planter's Peanuts</p>
+        <div class="approval">
+          <a href="#upvote"><i class="material-icons positive">check</i></a>
+          <a href="#downvote"><i class="material-icons negative">close</i></a>
+        </div>
         <p class="card-text">
           <small class="text-muted">
             <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#firstModal">Quick View
