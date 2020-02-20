@@ -53,6 +53,7 @@ class Item(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     # last_updated_by = models.OneToOneField(to=User, on_delete=models.CASCADE)
     objects = ItemManager()
+    # TODO awaiting further implementation
     # votes = models.ManyToManyField("Vote", related_name="item_votes")
 
 

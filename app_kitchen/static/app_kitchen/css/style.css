@@ -1,8 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+/* Navbar */
+.navbar {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar ul li {
+  display: inline-block;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-item:hover {
+  background-color: black;
+  color: white;
+}
+
+.nav-item:hover a {
+  color: lime;
+}
+
+/* Card Style */
 .snack_card {
   width: 50%;
 display: inline-block;
 }
 
+.card {
+  padding: 1rem;
+}
+
 .card p {
   text-align: center;
+}
+
+.card img {
+  margin: 0 auto;
+}
+
+.approval {
+  display: block;
+  text-align: center;
+}
+
+.approval i {
+  font-size: 4rem;
+  color: grey;
+}
+
+.approval .positive:hover, .approval .positive:active {
+  color: lime;
+}
+
+.approval .negative:hover, .approval .negative:active {
+  color: red;
 }
