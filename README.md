@@ -1,60 +1,25 @@
-# Python: Getting Started
+# Kitchen App for Dojo After Dark
 
-A barebones Django app, which can easily be deployed to Heroku.
+Django application to manage kitchen inventory.
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+## Prerequisites
 
-## Running Locally
+- Make sure you have Python 3.7+ [installed locally](http://install.python-guide.org)
+- Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
-Make sure you have Python 3.7 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+## How to run the project locally
 
-```sh
-
-For the first time to run:
-$ git clone https://github.com/CBaut/kitchen.git
-$ cd kitchen
-
-$ python3 -m venv venv
-
-Activate the virtual environment:
-For Windows:
-$ call venv/Scripts/activate
-
-For Mac:
-$ source venv/Scripts/activate
-
-$ pip3 install -r requirements.txt
-$ python3 -m pip install django
-
-$ createdb kitchen
-
-$ python3 manage.py migrate
-
-For Windows:
-$ heroku local web -f Procfile.windows
-
-For Mac:
-$ heroku local
-```
+- From the terminal `cd` into the folder you want to save the project
+- Clone the project `git clone https://github.com/CBaut/kitchen.git`
+- `cd` into the newly created project folder (`ls` or `dir` to view the contents of the current directory)
+- create a virtual environment `python3 -m venv venv` or just `python`
+- Activate the virtual environment:
+  - For Windows: `call venv/Scripts/activate`
+  - For Mac: `source venv/Scripts/activate`
+- Install dependencies `pip3 install -r requirements.txt` or `pip`
+- Migrate the database `python3 manage.py migrate`
+- Start the project
+  - For Windows: `heroku local web -f Procfile.windows`
+  - For Mac: `heroku local`
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-
-$ heroku run python manage.py migrate
-$ heroku open
-```
-
-or
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Python on Heroku, see these Dev Center articles:
-
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)

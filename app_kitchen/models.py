@@ -24,9 +24,13 @@ class UserManager(models.Manager):
 class ItemManager(models.Manager):
     def validator(self, data):
         errors = {}
+        if len(data['name']) < 2:
+            errors['name'] = "Item must have a name"
         if data['image_link'] == "":
             errors['profile'] = "Must have image url"
-            return errors
+        if data['quantity'] == "":
+            errors['quantity'] = "Enter a Quantity"
+        return errors
 
 
 class User(models.Model):
@@ -40,14 +44,15 @@ class User(models.Model):
 
 
 class Item(models.Model):
+    name = models.CharField(max_length=60)
     quantity = models.IntegerField()
     is_requested = models.BooleanField(default=False)
     image_link = models.TextField()
     is_low_inventory = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    # last_updated_by = models.OneToOneField(to=User, on_delete=models.CASCADE)
     objects = ItemManager()
-    last_updated_by = models.OneToOneField(to=User, on_delete=models.CASCADE)
     # TODO awaiting further implementation
     # votes = models.ManyToManyField("Vote", related_name="item_votes")
 
