@@ -7,7 +7,10 @@ from datetime import datetime
 
 def index(request):
     if request.method == 'GET':
-        return render(request, "index.html")
+        context = {
+            "all_items":Item.objects.all()
+        }
+        return render(request, "index.html", context)
 
 
 def item_new(request):
@@ -41,7 +44,10 @@ def item_edit(request):
 def items(request):
     if request.method == 'GET':
         print("Getting all items")
-        return render(request, "items.html")
+        context = {
+            'all_items':Item.objects.all()
+        }
+        return render(request, "items.html", context)
 
     if request.method == 'POST':
         errors = Item.objects.validator(request.POST)

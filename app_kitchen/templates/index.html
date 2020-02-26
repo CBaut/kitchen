@@ -16,26 +16,33 @@
 <body>
 
   <nav class="navbar">
-    <a href="#"><i class="material-icons positive">kitchen</i></a>
-    <h1 class="title">Kitchen App</h1>
-    <ul class="nav-links">
-      <a href="#"><li class="nav-item">Link 1</li></a>
-      <a href="#"><li class="nav-item">Link 2</li></a>
-      <a href="#"><li class="nav-item">Link 3</li></a>
-    </ul>
+    <div class="nav-section">
+      <a href="#"><i class="material-icons positive">kitchen</i></a>
+    </div>
+    <div class="nav-section">
+      <h1 class="title">Kitchen App</h1>
+    </div>
+    <div class="nav-section">
+      <ul class="nav-links">
+        <a href="items/new/"><li class="nav-item">Add Item</li></a>
+        <a href="items/"><li class="nav-item">All Items</li></a>
+        <a href="#"><li class="nav-item">Link 3</li></a>
+      </ul>
+    </div>
   </nav>
 
   <br>
   <h2>In Stock</h2>
   <br>
-
+  
   <div class="card-deck">
+    {% for item in all_items %}
     <div class="card">
       {% load static %}
-      <img src="{% static "app_kitchen/peanuts.jpg" %}" class="card-img-top snack_card" alt="coffee_bag">
+      <img src="{{item.image_link}}" class="card-img-top snack_card" alt="{{item.name}}">
       <div class="card-body">
-        <h5 class="card-title">Peanuts</h5>
-        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
         <div class="approval">
           <a href="#upvote"><i class="material-icons positive">check</i></a>
           <a href="#downvote"><i class="material-icons negative">close</i></a>
@@ -56,13 +63,13 @@
                   </div>
                   <div class="modal-body">
                     <div class="card">
-                      <img src="{% static "app_kitchen/peanuts.jpg" %}" class="card-img-top snack_card"
-                        alt="coffee_bag">
+                      <img src="{{item.image_link}}" class="card-img-top snack_card"
+                        alt="{{item.name}}">
                       <div class="card-body">
-                        <h5 class="card-title">Peanuts</h5>
-                        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.description}}</p>
                         <p class="card-text">
-                          <h5 class="text-muted">$15</h5>
+                          <h5 class="text-muted">{{item.price}}</h5>
                         </p>
                       </div>
                     </div>
@@ -78,98 +85,8 @@
         </p>
       </div>
     </div>
-    <div class="card">
-      {% load static %}
-      <img src="{% static "app_kitchen/nature_valley.jpg" %}" class="card-img-top snack_card" alt="coffee_bag">
-      <div class="card-body">
-        <h5 class="card-title">Nature Valley Bars</h5>
-        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
-        <p class="card-text">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#firstModal">Quick View
-            </button>
-            <div class="modal fade" id="firstModal" tabindex="-1" role="dialog" aria-labelledby="firstModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="firstModalLabel">Nature Valley Bars</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="card">
-                      {% load static %}
-                      <img src="{% static "app_kitchen/nature_valley.jpg" %}" class="card-img-top snack_card"
-                        alt="coffee_bag">
-                      <div class="card-body">
-                        <h5 class="card-title">Peanuts</h5>
-                        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
-                        <p class="card-text">
-                          <h5 class="text-muted">$15</h5>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-outline-dark">Request</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </small>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      {% load static %}
-      <img src="{% static "app_kitchen/peanuts.jpg" %}" class="card-img-top snack_card" alt="coffee_bag">
-      <div class="card-body">
-        <h5 class="card-title">Peanuts</h5>
-        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
-        <p class="card-text">
-          <small class="text-muted">
-            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#firstModal">Quick View
-            </button>
-            <div class="modal fade" id="firstModal" tabindex="-1" role="dialog" aria-labelledby="firstModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="firstModalLabel">Peanuts</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="card">
-                      <img src="{% static "app_kitchen/peanuts.jpg" %}" class="card-img-top snack_card"
-                        alt="coffee_bag">
-                      <div class="card-body">
-                        <h5 class="card-title">Nature Valley Bars</h5>
-                        <p class="card-text">12oz Bucket of Planter's Peanuts</p>
-                        <p class="card-text">
-                          <h5 class="text-muted">$15</h5>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-outline-dark">Request</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </small>
-        </p>
-      </div>
-    </div>
+    {% endfor %}
   </div>
-
-
 
   <h2>Requested</h2>
 
