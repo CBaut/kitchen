@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+h2 {
+  margin: 1rem;
+}
+
 /* Header */
 .title {
   text-align: center;
@@ -13,7 +17,6 @@
 .navbar {
   border: 1px solid black;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -38,19 +41,36 @@
   color: black;
 }
 
+.nav-item {
+  border-bottom: 2px solid transparent;
+}
+
 .nav-item:hover {
-  background-color: black;
-  color: white;
+  color: #06aae2;
+  border-bottom: 2px solid black;
 }
 
 .nav-item:hover a {
   color: lime;
 }
 
+.nav-section {
+  flex: 1;
+}
+
+.nav-section>ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /* Card Style */
 .snack_card {
-  width: 50%;
-display: inline-block;
+  width: 25%;
+  display: inline-block;
+}
+
+.snack_card img {
+  max-width: 20%;
 }
 
 .card {
@@ -63,6 +83,10 @@ display: inline-block;
 
 .card img {
   margin: 0 auto;
+}
+
+.card-title {
+  text-align: center;
 }
 
 .approval {

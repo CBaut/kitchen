@@ -5,11 +5,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  {% load static %}
+  <link rel="stylesheet" href="{% static "app_kitchen/css/style.css" %}">
   <title>Document</title>
 </head>
 
 <body>
-  items page
+
+  <h1 class="title">All Kitchen Items</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>is_requested</th>
+        <th>is_low_inventory</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in all_items %}
+      <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.is_requested}}</td>
+        <td>{{item.is_low_inventory}}</td>
+        <td>{{item.created_at}}</td>
+        <td>{{item.updated_at}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </body>
 
 </html>

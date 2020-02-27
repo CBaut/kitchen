@@ -35,14 +35,14 @@
               <form action="/items/" method="POST">
                 {%csrf_token%}
                 <div class="card-body"></div>
-                <div class="form-group">
-                  <label>Item Name :<input type="text" name="name" id=""></label>
                   <div class="form-group">
-                    <label>Item Image Link: <input type="text" name="image_link" id="" class="form-control">
-                    </label>
+                    <label>Item Name:<input type="text" name="name" id="" class="form-control"></label>
                   </div>
                   <div class="form-group">
-                    <label>Item Quantity<input type="text" name="quantity" id="" class="form-control"></label>
+                    <label>Item Image Link: <input type="text" name="image_link" id="" class="form-control"></label>
+                  </div>
+                  <div class="form-group">
+                    <label>Item Quantity:<input type="text" name="quantity" id="" class="form-control"></label>
                   </div>
                   <button type="submit" class="btn-danger">Submit</button>
               </form>
