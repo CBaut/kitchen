@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+h2 {
+  margin: 1rem;
+}
+
 /* Header */
 .title {
   text-align: center;
@@ -13,7 +17,6 @@
 .navbar {
   border: 1px solid black;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
 }
 

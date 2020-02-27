@@ -15,25 +15,25 @@
 
 <body>
 
-  <nav class="navbar">
-    <div class="nav-section">
-      <a href="#"><i class="material-icons positive">kitchen</i></a>
-    </div>
-    <div class="nav-section">
-      <h1 class="title">Kitchen App</h1>
-    </div>
-    <div class="nav-section">
-      <ul class="nav-links">
-        <a href="items/new/"><li class="nav-item">Add Item</li></a>
-        <a href="items/"><li class="nav-item">All Items</li></a>
-        <a href="#"><li class="nav-item">Link 3</li></a>
-      </ul>
-    </div>
-  </nav>
+  <header>
+    <nav class="navbar">
+      <div class="nav-section">
+        <a href="#"><i class="material-icons positive">kitchen</i></a>
+      </div>
+      <div class="nav-section">
+        <h1 class="title">Kitchen App</h1>
+      </div>
+      <div class="nav-section">
+        <ul class="nav-links">
+          <a href="items/new/"><li class="nav-item">Add Item</li></a>
+          <a href="items/"><li class="nav-item">All Items</li></a>
+          <a href="#"><li class="nav-item">Link 3</li></a>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-  <br>
   <h2>In Stock</h2>
-  <br>
   
   <div class="card-deck">
     {% for item in all_items %}
@@ -56,7 +56,7 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="firstModalLabel">Peanuts</h5>
+                    <h5 class="modal-title" id="firstModalLabel">{{item.name}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
